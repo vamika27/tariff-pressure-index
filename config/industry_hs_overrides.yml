@@ -1,0 +1,14 @@
+Consumer Electronics:
+  hs_prefixes: ["84", "85"]
+
+Apparel Footwear Retail:
+  hs_prefixes: ["61", "62", "64"]
+
+Home Improvement Retail:
+  hs_prefixes: ["44", "68", "94"]
+
+Household Products:
+  hs_prefixes: ["33", "34", "39"]
+
+Industrial Machinery:
+  hs_prefixes: ["84", "85", "87"]

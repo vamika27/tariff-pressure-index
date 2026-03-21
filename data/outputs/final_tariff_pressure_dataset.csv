@@ -1,0 +1,24 @@
+ticker,company_name,sector,sub_industry,gross_margin,import_dependency_ratio,affected_region_revenue_share,tariff_pressure_score,risk_bucket
+APTV,Aptiv,Consumer Discretionary,Automotive Parts & Equipment,0.06497365932729975,0.7,74.0,86.94,High
+DE,Deere & Company,Industrials,Agricultural & Farm Machinery,0.17736248236953456,0.55,50.0,65.27,Medium
+CAT,Caterpillar Inc.,Industrials,Construction Machinery & Heavy Transportation Equipment,0.0765732394945878,0.65,16.0,61.75,Medium
+CL,Colgate-Palmolive,Consumer Staples,Household Products,0.6056347321192926,0.5,88.0,60.74,Medium
+HPQ,HP Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",0.2103080568720379,0.75,0.0,56.2,Medium
+DELL,Dell Technologies,Information Technology,"Technology Hardware, Storage & Peripherals",0.21737673795298454,0.75,0.0,55.94,Medium
+AMZN,Amazon,Consumer Discretionary,Broadline Retail,0.006490924479137742,0.6,0.0,55.56,Medium
+KMB,Kimberly-Clark,Consumer Staples,Household Products,0.3813872923391859,0.5,52.0,55.56,Medium
+NKE,"Nike, Inc.",Consumer Discretionary,"Apparel, Accessories & Luxury Goods",0.44463935179384373,0.8,8.0,53.17,Medium
+AAPL,Apple Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",0.4688254223652454,0.75,15.0,52.14,Medium
+CSCO,Cisco,Information Technology,Communications Equipment,0.6550732969244035,0.5,68.2,51.38,Medium
+CDW,CDW Corporation,Information Technology,Technology Distributors,0.21799566171495063,0.65,0.0,50.36,Medium
+AMD,Advanced Micro Devices,Information Technology,Semiconductors,0.4878358250124124,0.75,0.0,45.74,Medium
+MMM,3M,Industrials,Industrial Conglomerates,0.33212677497214504,0.6,0.0,43.28,Medium
+LOW,Lowe's,Consumer Discretionary,Home Improvement Retail,0.3344594594594595,0.6,0.0,43.19,Medium
+HD,Home Depot (The),Consumer Discretionary,Home Improvement Retail,0.33614890242884565,0.6,0.0,43.12,Medium
+COST,Costco,Consumer Staples,Consumer Staples Merchandise Retail,0.13080540858318637,0.45,0.0,42.53,Medium
+BBY,Best Buy,Consumer Discretionary,Computer & Electronics Retail,0.7309822538713688,0.7,20.0,41.37,Medium
+BLDR,Builders FirstSource,Industrials,Building Products,0.32979409048483066,0.55,0.0,40.59,Medium
+TGT,Target Corporation,Consumer Staples,Consumer Staples Merchandise Retail,0.1962697122311668,0.45,0.0,40.07,Medium
+PG,Procter & Gamble,Consumer Staples,Personal Care Products,0.33212677497214504,0.5,0.0,37.72,Medium
+WMT,Walmart,Consumer Staples,Consumer Staples Merchandise Retail,0.33212677497214504,0.45,0.0,34.94,Medium
+ADBE,Adobe Inc.,Information Technology,Application Software,0.8904333605887162,0.2,10.0,3.79,Low

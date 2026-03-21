@@ -1,0 +1,9 @@
+events:
+  - name: "Section 301 Announcement"
+    date: "2018-03-22"
+  - name: "Tariff List 1 Effective"
+    date: "2018-07-06"
+  - name: "Tariff List 2 Effective"
+    date: "2018-08-23"
+  - name: "Tariff List 3 Effective"
+    date: "2018-09-24"

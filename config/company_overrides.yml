@@ -1,0 +1,7 @@
+AAPL:
+  hs_prefixes: ["85"]
+  note: "Prioritize electronics exposure"
+
+NKE:
+  hs_prefixes: ["61", "62", "64"]
+  note: "Apparel and footwear focused"
