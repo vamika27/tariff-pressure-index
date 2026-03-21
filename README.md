@@ -63,7 +63,7 @@ These firms are not immediately high-risk, but they share:
 
 ---
 
-### 🟢 True Resilience Is Rare
+### True Resilience Is Rare
 
 Only **one company clearly falls into Low risk**:
 
@@ -138,6 +138,20 @@ This is why companies like Aptiv stand out so sharply — they sit at the inters
 ## 📊 Dashboard
 
 👉 https://app.powerbi.com/links/dEwMGO2Lzo?ctid=41f88ecb-ca63-404d-97dd-ab0a169fd138&pbi_source=linkShare&bookmarkGuid=017ffc84-48d3-4ea8-9530-f48a37c4c05a
+
+## Dashboard Preview
+
+### Top 10 Companies by Tariff Pressure Score
+![Bar Chart](assets/TPIBarChart.png)
+
+### Trade Dependency vs Tariff Risk
+![Scatter Plot](assets/TPIScatterPlot.png)
+
+### Risk Distribution by Sector
+![Risk Distribution](assets/TPIPieChart.png)
+
+### Full Company Breakdown
+![Table](assets/TPITable.png)
 
 The dashboard visualizes:
 
