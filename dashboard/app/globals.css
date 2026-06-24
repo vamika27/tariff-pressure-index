@@ -1,19 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --color-cream: #f5f0e8;
-  --color-oat: #fbf7f0;
-  --color-coffee: #5c4632;
-  --color-latte: #d8c3a5;
-  --color-sage: #a8bfa0;
-  --color-honey: #e0a85f;
-  --color-terracotta: #c1654a;
-  --font-display: var(--font-quicksand), ui-rounded, system-ui, sans-serif;
-  --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --shadow-cozy: 0 20px 45px rgba(92, 70, 50, 0.12);
-  --shadow-soft: 0 12px 30px rgba(92, 70, 50, 0.09);
-  --radius-cozy: 1.5rem;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   color-scheme: light;
