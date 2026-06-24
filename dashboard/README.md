@@ -1,0 +1,42 @@
+# Tariff Pressure Index Dashboard
+
+Interactive Next.js dashboard for the fixed tariff risk model output. The app is self-contained under `/dashboard` so Vercel can deploy it with **Root Directory = `dashboard`**. A root `vercel.json` is also included so repo-root Vercel deployments build this dashboard instead of scanning the Python analysis files.
+
+## Stack
+
+- Next.js 14 App Router
+- TypeScript
+- Tailwind CSS
+- Recharts
+- Static local JSON data at `data/companies.json`
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000.
+
+## Production build
+
+```bash
+npm run build
+```
+
+## Deploy on Vercel
+
+1. Import the GitHub repo: https://github.com/vamika27/tariff-pressure-index
+2. Preferred: set **Root Directory** to `dashboard`.
+3. Set the framework/application preset to **Next.js** if Vercel does not detect it automatically.
+4. If deploying from the repo root, keep the committed root `vercel.json`; it runs install/build inside `dashboard/` and outputs `dashboard/.next`.
+5. Make sure the deployed branch/commit contains the `/dashboard` folder. Deploying an older `main` commit without this folder will make Vercel detect the Python analysis files instead.
+6. Deploy.
+
+No backend or environment variables are required.
+
+## Related links
+
+- GitHub repo: https://github.com/vamika27/tariff-pressure-index
+- Live Power BI dashboard: https://app.powerbi.com/links/dEwMGO2Lzo?ctid=41f88ecb-ca63-404d-97dd-ab0a169fd138&pbi_source=linkShare&bookmarkGuid=017ffc84-48d3-4ea8-9530-f48a37c4c05a
