@@ -445,7 +445,7 @@ export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8">
       <header className="overflow-hidden rounded-[2rem] border border-oat/80 bg-oat/90 p-6 shadow-cozy md:p-10">
-        <div>
+        <div className="grid gap-6 lg:grid-cols-[1fr_260px] lg:items-center">
           <div>
             <p className="mb-4 inline-flex rounded-full bg-latte/40 px-4 py-2 text-sm font-extrabold text-coffee">
               A visual guide to tariff pressure
@@ -457,6 +457,13 @@ export default function Home() {
               Which S&amp;P 500 companies are most exposed to global trade
               disruption — and why
             </p>
+          </div>
+          <div className="mx-auto max-w-[230px] rounded-[2rem] border border-latte/40 bg-cream/70 p-4 shadow-soft lg:mr-0">
+            <img
+              src="/logo.svg"
+              alt="Tariff Pressure Index project logo"
+              className="h-auto w-full"
+            />
           </div>
         </div>
 

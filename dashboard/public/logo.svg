@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 640" role="img" aria-labelledby="title desc">
+  <title id="title">Tariff Pressure Index logo</title>
+  <desc id="desc">Line-art trade and tariff logo with a truck, map pin, money, arrows, and supply chain nodes.</desc>
+  <rect width="1024" height="640" fill="#F5F0E8"/>
+  <circle cx="520" cy="336" r="150" fill="#B99A82"/>
+  <g fill="none" stroke="#14373D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M316 157c-31-9-45 13-53 28-20-7-35-1-42 15-8 18 3 37 26 44-4 23 15 42 41 40 13 25 42 25 61 10 16 15 45 14 59-9 26 3 49-13 45-38-3-19-20-33-43-35-4-27-26-43-54-39-9-11-21-17-40-16z"/>
+    <path d="M431 111c0-45 37-82 82-82s82 37 82 82c0 58-82 133-82 133s-82-75-82-133z" fill="#D9FFF8"/>
+    <circle cx="513" cy="111" r="24" fill="#F5F0E8"/>
+    <path d="M500 84c11-8 25-8 37 0"/>
+    <path d="M364 323h-119v-130h92c15 0 27 12 27 27z" fill="#D9FFF8"/>
+    <path d="M364 244h58l39 49v30h-97z" fill="#F5F0E8"/>
+    <path d="M421 257h-43v27h65"/>
+    <path d="M232 323h246"/>
+    <circle cx="286" cy="349" r="22" fill="#F5F0E8"/>
+    <circle cx="426" cy="349" r="22" fill="#F5F0E8"/>
+    <path d="M327 216c0-58 33-90 79-96"/>
+    <path d="M404 120v-28l40 36-40 36v-28c-33 8-53 35-53 78"/>
+    <path d="M640 165l78-76 42 42 44-39-24-22 88 9-4 87-25-24-81 72c-19 17-42 17-61 0l-18-16-37 36c-11 11-28 11-39 1-10-10-10-27 1-38z" fill="#D9FFF8"/>
+    <path d="M600 276l83-74 40 40 100-82c13-10 31-8 41 5 10 13 7 31-6 41l-123 101c-18 14-39 13-56-3l-13-12-62 56c-10 9-26 8-35-2-9-11-8-26 2-35z" fill="#D9FFF8"/>
+    <rect x="735" y="189" width="150" height="76" rx="4" fill="#F5F0E8"/>
+    <path d="M735 216c18 0 31-11 31-27"/>
+    <path d="M854 265c0-17 13-30 31-30"/>
+    <path d="M810 203v50"/>
+    <path d="M832 214c-12-9-39-9-41 8-3 24 45 10 42 31-2 17-31 17-45 7"/>
+    <path d="M513 473v-84"/>
+    <rect x="486" y="368" width="54" height="54" rx="12" fill="#D9FFF8"/>
+    <path d="M402 541v-42c0-30 24-54 54-54h55"/>
+    <path d="M514 445h59c30 0 54 24 54 54v42"/>
+    <rect x="398" y="505" width="54" height="54" rx="12" fill="#F5F0E8"/>
+    <rect x="500" y="440" width="54" height="54" rx="12" fill="#D9FFF8"/>
+    <rect x="552" y="518" width="54" height="54" rx="12" fill="#D9FFF8"/>
+    <rect x="640" y="518" width="54" height="54" rx="12" fill="#F5F0E8"/>
+    <rect x="592" y="404" width="58" height="66" rx="10" fill="#F5F0E8"/>
+    <path d="M621 404v-54"/>
+    <path d="M606 350h30l-5 48h-20z" fill="#D9FFF8"/>
+    <circle cx="621" cy="459" r="12" fill="#D9FFF8"/>
+    <path d="M319 431c32 71 103 120 186 123"/>
+    <path d="M504 79c86-9 173 23 233 88"/>
+    <path d="M886 324c-2 62-24 120-63 167"/>
+  </g>
+</svg>
