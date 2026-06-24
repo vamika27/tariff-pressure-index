@@ -76,8 +76,6 @@ const scoreBands = [
 ] as const;
 
 const githubRepoUrl = "https://github.com/vamika27/tariff-pressure-index";
-const powerBiUrl =
-  "https://app.powerbi.com/links/dEwMGO2Lzo?ctid=41f88ecb-ca63-404d-97dd-ab0a169fd138&pbi_source=linkShare&bookmarkGuid=017ffc84-48d3-4ea8-9530-f48a37c4c05a";
 
 function formatPercent(value: number) {
   return `${(value * 100).toFixed(value * 100 >= 10 ? 0 : 1)}%`;
@@ -325,6 +323,24 @@ function ChartPlaceholder({ label }: { label: string }) {
   );
 }
 
+function SortIndicator({
+  column,
+  sortState
+}: {
+  column: string;
+  sortState: SortState;
+}) {
+  if (sortState.key !== column) {
+    return null;
+  }
+
+  return (
+    <span className="text-[0.65rem]" aria-hidden="true">
+      {sortState.direction === "asc" ? "▲" : "▼"}
+    </span>
+  );
+}
+
 export default function Home() {
   const [chartsReady, setChartsReady] = useState(false);
   const [activeRisk, setActiveRisk] = useState<RiskBucket | null>(null);
@@ -429,10 +445,10 @@ export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8">
       <header className="overflow-hidden rounded-[2rem] border border-oat/80 bg-oat/90 p-6 shadow-cozy md:p-10">
-        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+        <div>
           <div>
             <p className="mb-4 inline-flex rounded-full bg-latte/40 px-4 py-2 text-sm font-extrabold text-coffee">
-              Cozy trade-risk dashboard
+              A visual guide to tariff pressure
             </p>
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-coffee sm:text-5xl md:text-6xl">
               Tariff Pressure Index
@@ -440,17 +456,6 @@ export default function Home() {
             <p className="mt-4 max-w-3xl text-lg leading-8 text-coffee/75">
               Which S&amp;P 500 companies are most exposed to global trade
               disruption — and why
-            </p>
-          </div>
-          <div className="rounded-cozy border border-latte/50 bg-cream/80 p-4 text-sm leading-6 text-coffee/75">
-            <p className="font-bold text-coffee">Score methodology</p>
-            <p className="mt-2">
-              The Tariff Pressure Score is the average of three 0–1 normalized
-              components — (1) gross margin vulnerability (inverse of gross
-              margin: thinner margins = less shock absorption), (2) import
-              dependency ratio, and (3) international/affected-region revenue
-              share — scaled to 0–100. Risk buckets: <strong>Low = 0–33</strong>,{" "}
-              <strong>Medium = 34–66</strong>, <strong>High = 67–100</strong>.
             </p>
           </div>
         </div>
@@ -475,21 +480,26 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-7 flex flex-col gap-3 rounded-cozy border border-latte/50 bg-cream/60 p-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-bold text-coffee">Cross-filter by risk bucket</p>
-            <p className="text-sm text-coffee/70">
-              Click a badge here, in a chart legend, or in the table to spotlight
-              that risk level everywhere.
-            </p>
-          </div>
-          <RiskFilterLegend
-            activeRisk={activeRisk}
-            onSelect={handleRiskSelect}
-            counts={riskCounts}
-          />
-        </div>
       </header>
+
+      <Card className="grid gap-4 md:grid-cols-[0.7fr_1.3fr] md:items-center">
+        <div>
+          <p className="mb-2 text-xs font-extrabold uppercase tracking-[0.22em] text-coffee/50">
+            How to read the score
+          </p>
+          <h2 className="font-display text-2xl font-extrabold text-coffee">
+            Score methodology
+          </h2>
+        </div>
+        <p className="text-sm leading-7 text-coffee/75 md:text-base">
+          The Tariff Pressure Score is the average of three 0–1 normalized
+          components — (1) gross margin vulnerability (inverse of gross margin:
+          thinner margins = less shock absorption), (2) import dependency ratio,
+          and (3) international/affected-region revenue share — scaled to 0–100.
+          Risk buckets: <strong>Low = 0–33</strong>,{" "}
+          <strong>Medium = 34–66</strong>, <strong>High = 67–100</strong>.
+        </p>
+      </Card>
 
       <Card>
         <SectionHeading
@@ -497,7 +507,23 @@ export default function Home() {
           title="Top 10 Companies by Tariff Pressure Score"
           caption="The longest bars sit closest to the High band on the 0-100 scale, so the score reads like a risk thermometer rather than an abstract number."
         />
-        <ScoreBandLegend />
+        <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
+          <ScoreBandLegend />
+          <div className="flex flex-col justify-between gap-3 rounded-2xl border border-latte/60 bg-cream/70 p-4">
+            <div>
+              <p className="font-bold text-coffee">Cross-filter by risk bucket</p>
+              <p className="mt-1 text-sm text-coffee/70">
+                Click a badge here, in a chart legend, or in the table to
+                spotlight that risk level across the dashboard.
+              </p>
+            </div>
+            <RiskFilterLegend
+              activeRisk={activeRisk}
+              onSelect={handleRiskSelect}
+              counts={riskCounts}
+            />
+          </div>
+        </div>
         <div className="mt-6 h-[520px] w-full">
           {chartsReady ? (
           <ResponsiveContainer width="100%" height="100%">
@@ -568,7 +594,7 @@ export default function Home() {
         </div>
       </Card>
 
-      <div className="grid gap-8 xl:grid-cols-[1.25fr_0.75fr]">
+      <div className="grid gap-8">
         <Card>
           <SectionHeading
             eyebrow="Two pressures at once"
@@ -665,53 +691,57 @@ export default function Home() {
             title="Risk Distribution by Sector"
             caption="This donut counts companies by Low, Medium, and High risk bucket, with each hover revealing the company-level scores inside that bucket."
           />
-          <div className="h-[330px] w-full">
-            {chartsReady ? (
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={riskDistribution}
-                  dataKey="value"
-                  nameKey="name"
-                  innerRadius="52%"
-                  outerRadius="78%"
-                  paddingAngle={4}
-                  labelLine={false}
-                  label={({ name, percent }) =>
-                    `${name}: ${((percent ?? 0) * 100).toFixed(1)}%`
-                  }
-                  isAnimationActive
-                  animationDuration={850}
-                >
-                  {riskDistribution.map((bucket) => (
-                    <Cell
-                      key={bucket.name}
-                      fill={riskStyles[bucket.name].color}
-                      fillOpacity={!activeRisk || activeRisk === bucket.name ? 0.96 : 0.25}
-                      stroke="#FBF7F0"
-                      strokeWidth={4}
-                      onClick={() => handleRiskSelect(bucket.name)}
-                      className="cursor-pointer outline-none transition-opacity duration-200"
-                    />
-                  ))}
-                </Pie>
-                <Tooltip content={<RiskDistributionTooltip />} />
-              </PieChart>
-            </ResponsiveContainer>
-            ) : (
-              <ChartPlaceholder label="Loading the risk distribution donut..." />
-            )}
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center">
+            <div className="h-[360px] w-full md:h-[410px]">
+              {chartsReady ? (
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart margin={{ top: 20, right: 72, bottom: 20, left: 72 }}>
+                  <Pie
+                    data={riskDistribution}
+                    dataKey="value"
+                    nameKey="name"
+                    innerRadius="50%"
+                    outerRadius="72%"
+                    paddingAngle={4}
+                    labelLine={false}
+                    label={({ name, percent }) =>
+                      `${name}: ${((percent ?? 0) * 100).toFixed(1)}%`
+                    }
+                    isAnimationActive
+                    animationDuration={850}
+                  >
+                    {riskDistribution.map((bucket) => (
+                      <Cell
+                        key={bucket.name}
+                        fill={riskStyles[bucket.name].color}
+                        fillOpacity={!activeRisk || activeRisk === bucket.name ? 0.96 : 0.25}
+                        stroke="#FBF7F0"
+                        strokeWidth={4}
+                        onClick={() => handleRiskSelect(bucket.name)}
+                        className="cursor-pointer outline-none transition-opacity duration-200"
+                      />
+                    ))}
+                  </Pie>
+                  <Tooltip content={<RiskDistributionTooltip />} />
+                </PieChart>
+              </ResponsiveContainer>
+              ) : (
+                <ChartPlaceholder label="Loading the risk distribution donut..." />
+              )}
+            </div>
+            <div className="space-y-4">
+              <RiskFilterLegend
+                activeRisk={activeRisk}
+                onSelect={handleRiskSelect}
+                counts={riskCounts}
+              />
+              <p className="rounded-cozy bg-cream/80 p-5 text-sm font-bold leading-7 text-coffee/75">
+                Plain-English takeaway: 91.3% of the companies sit in the Medium
+                bucket, which means tariff exposure is broad and latent even when
+                only Aptiv crosses into High risk.
+              </p>
+            </div>
           </div>
-          <RiskFilterLegend
-            activeRisk={activeRisk}
-            onSelect={handleRiskSelect}
-            counts={riskCounts}
-          />
-          <p className="mt-5 rounded-cozy bg-cream/80 p-4 text-sm font-bold leading-6 text-coffee/75">
-            Plain-English takeaway: 91.3% of the companies sit in the Medium bucket,
-            which means tariff exposure is broad and latent even when only Aptiv
-            crosses into High risk.
-          </p>
         </Card>
       </div>
 
@@ -778,17 +808,12 @@ export default function Home() {
                     <th key={key} className="border-b border-latte/60 px-4 py-3">
                       <button
                         type="button"
+                        aria-label={`Sort by ${label}`}
                         onClick={() => handleSort(key as SortKey)}
                         className="flex items-center gap-1 font-extrabold hover:text-coffee"
                       >
                         {label}
-                        <span aria-hidden="true">
-                          {sortState.key === key
-                            ? sortState.direction === "asc"
-                              ? "up"
-                              : "down"
-                            : "sort"}
-                        </span>
+                        <SortIndicator column={key} sortState={sortState} />
                       </button>
                     </th>
                   ))}
@@ -871,20 +896,24 @@ export default function Home() {
         ))}
       </section>
 
-      <footer className="mb-4 rounded-[2rem] border border-latte/50 bg-oat/75 p-6 text-center text-sm font-bold text-coffee/70 shadow-soft">
-        <p>Vamika Negi — Computer Science, Arizona State University</p>
-        <div className="mt-3 flex flex-wrap justify-center gap-3">
+      <footer className="mb-4 rounded-[2rem] border border-latte/50 bg-oat/75 p-7 shadow-soft">
+        <div className="flex flex-col gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-coffee/45">
+              Project by
+            </p>
+            <p className="mt-2 font-display text-xl font-extrabold text-coffee">
+              Vamika Negi
+            </p>
+            <p className="mt-1 text-sm font-bold text-coffee/65">
+              Computer Science, Arizona State University
+            </p>
+          </div>
           <a
             href={githubRepoUrl}
-            className="rounded-full bg-cream px-4 py-2 text-coffee transition hover:bg-latte/40"
+            className="inline-flex justify-center rounded-full bg-cream px-5 py-3 text-sm font-extrabold text-coffee shadow-sm transition hover:bg-latte/40"
           >
             GitHub repo
-          </a>
-          <a
-            href={powerBiUrl}
-            className="rounded-full bg-cream px-4 py-2 text-coffee transition hover:bg-latte/40"
-          >
-            Live Power BI dashboard
           </a>
         </div>
       </footer>

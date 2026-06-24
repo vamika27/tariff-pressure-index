@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Quicksand } from "next/font/google";
 import "./globals.css";
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  variable: "--font-quicksand",
-  display: "swap"
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   title: "Tariff Pressure Index Dashboard",
@@ -26,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${quicksand.variable} ${dmSans.variable}`}>
+    <html lang="en">
       <body className="font-body antialiased">{children}</body>
     </html>
   );

@@ -28,6 +28,7 @@ body {
     radial-gradient(circle at 80% 8%, rgba(193, 101, 74, 0.12), transparent 24rem),
     var(--background);
   color: var(--coffee);
+  font-family: Georgia, Cambria, "Times New Roman", serif;
 }
 
 button,
@@ -57,6 +58,13 @@ button:hover {
 .recharts-legend-item-text {
   fill: #5c4632;
   color: #5c4632 !important;
+}
+
+.recharts-wrapper,
+.recharts-text,
+.recharts-label,
+.recharts-tooltip-wrapper {
+  font-family: Georgia, Cambria, "Times New Roman", serif !important;
 }
 
 .chart-card {
