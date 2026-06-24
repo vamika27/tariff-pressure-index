@@ -29,8 +29,10 @@ npm run build
 
 1. Import the GitHub repo: https://github.com/vamika27/tariff-pressure-index
 2. Preferred: set **Root Directory** to `dashboard`.
-3. If deploying from the repo root, keep the committed root `vercel.json`; it runs install/build inside `dashboard/` and outputs `dashboard/.next`.
-4. Deploy.
+3. Set the framework/application preset to **Next.js** if Vercel does not detect it automatically.
+4. If deploying from the repo root, keep the committed root `vercel.json`; it runs install/build inside `dashboard/` and outputs `dashboard/.next`.
+5. Make sure the deployed branch/commit contains the `/dashboard` folder. Deploying an older `main` commit without this folder will make Vercel detect the Python analysis files instead.
+6. Deploy.
 
 No backend or environment variables are required.
 
