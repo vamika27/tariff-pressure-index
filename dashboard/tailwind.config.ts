@@ -17,8 +17,8 @@ const config: Config = {
         terracotta: "#C1654A"
       },
       fontFamily: {
-        display: ["var(--font-quicksand)", "ui-rounded", "system-ui", "sans-serif"],
-        body: ["var(--font-dm-sans)", "ui-sans-serif", "system-ui", "sans-serif"]
+        display: ["Georgia", "Cambria", "\"Times New Roman\"", "serif"],
+        body: ["Georgia", "Cambria", "\"Times New Roman\"", "serif"]
       },
       boxShadow: {
         cozy: "0 20px 45px rgba(92, 70, 50, 0.12)",
